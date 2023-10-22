@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+
+// Function to perform arithmetic operations
+double calculate(double num1, double num2, char operator) {
+    switch (operator) {
+        case '+':
+            return num1 + num2;
+        case '-':
+            return num1 - num2;
+        case '*':
+            return num1 * num2;
+        case '/':
+            if (num2 != 0) {
+                return num1 / num2;
+            } else {
+                printf("Error: Division by zero is not allowed.\n");
+                exit(0);
+            }
+        case '^':
+            return pow(num1, num2);
+        case 'r':
+            return sqrt(num1);
+        default:
+            printf("Error: Invalid operator.\n");
+            exit(0);
+    }
+}
+
+int main() {
+    double num1, num2;
+    char operator;
+
+    printf("Enter first number: ");
+    scanf("%lf", &num1);
+
+    printf("Enter second number: ");
+    scanf("%lf", &num2);
+
+    printf("Enter operator (+, -, *, /, ^, r): ");
+    scanf(" %c", &operator);
+
+    double result = calculate(num1, num2, operator
